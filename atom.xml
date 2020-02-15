@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Charles</title>
+  
+  <subtitle>学习记录</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.bingobingo.xin/"/>
+  <updated>2020-02-14T07:38:00.929Z</updated>
+  <id>http://www.bingobingo.xin/</id>
+  
+  <author>
+    <name>Charles</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>frp内网穿透</title>
+    <link href="http://www.bingobingo.xin/2020/02/14/frp-nei-wang-chuan-tou/"/>
+    <id>http://www.bingobingo.xin/2020/02/14/frp-nei-wang-chuan-tou/</id>
+    <published>2020-02-14T01:25:00.000Z</published>
+    <updated>2020-02-14T07:38:00.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;FRP内网穿透&quot;&gt;&lt;a href=&quot;#FRP内网穿透&quot; class=&quot;headerlink&quot; title=&quot;FRP内网穿透&quot;&gt;&lt;/a&gt;FRP内网穿透&lt;/h1&gt;&lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="frp" scheme="http://www.bingobingo.xin/categories/frp/"/>
+    
+    
+      <category term="frp" scheme="http://www.bingobingo.xin/tags/frp/"/>
+    
+      <category term="内网穿透" scheme="http://www.bingobingo.xin/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
+  
+</feed>
