@@ -384,14 +384,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    427
+                    649
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -430,7 +430,7 @@ max_pool_count = 20 # 穿透服务允许的连接数
 max_ports_per_client = 0 # 单个客户端允许建立的穿透服务，0为不限制</code></pre>
 <pre class=" language-shell"><code class="language-shell">./frpc -c ./frc.ini #配置完成后，在当前的工作目录下执行启动服务</code></pre>
 <p>访问公网下的ip的7500端口可以进入控制台</p>
-<p><img src="/images/image-20200214144720250.png" alt="image-20200214144720250"></p>
+<p><img src="/images/image-20200214144720250.png" alt=""></p>
 <p>将frps加入服务管理 ，在/usr/lib/systemd/system/目录下新建frps.service文件</p>
 <pre class=" language-shell"><code class="language-shell">[Unit]
 Description=frps service
@@ -447,7 +447,31 @@ WantedBy=multi-user.target</code></pre>
 <p>将frp服务设置为开机自启动</p>
 <pre class=" language-shell"><code class="language-shell">systemctl enable frps #开机自启动
 systemctl start frps #启动frp</code></pre>
-<h2 id="下载配置客户端frpc"><a href="#下载配置客户端frpc" class="headerlink" title="下载配置客户端frpc"></a>下载配置客户端frpc</h2>
+<h2 id="下载配置客户端frpc"><a href="#下载配置客户端frpc" class="headerlink" title="下载配置客户端frpc"></a>下载配置客户端frpc</h2><p>获取对应架构的frp客户端，我这里用的是树莓派所采用的是arm版的</p>
+<pre class=" language-shell"><code class="language-shell">wget https://github.com/fatedier/frp/releases/download/v0.31.2/frp_0.31.2_linux_arm.tar.gz
+tar -zxvf frp_0.31.2_linux_arm.tar.gz #解压缩</code></pre>
+<p>在客户端需要配置frps.ini文件，我这里只需要将一个网站公开，可以按照自己的需求进行配置</p>
+<pre class=" language-shell"><code class="language-shell">[common]
+server_addr =  #服务器地址,可以是域名，也可使ip地址
+server_port = 7000
+token = #需要以服务端保持一致
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22 #本地端口
+remote_port = 8008 #远程ssh端口
+
+[pi]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 80 #本地端口
+remote_port = 8080 #远程网页访问端口
+</code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><pre class=" language-shell"><code class="language-shell">ssh -p服务端远程端口 客户端的Lunix登入账户@服务器地址
+#之后的密码输入客户端的登陆密码
+#IP地址:8080 直接访问树莓派上的网址</code></pre>
+
             </div>
             <hr/>
 
@@ -1107,7 +1131,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">427</span>&nbsp;字
+                class="white-color">649</span>&nbsp;字
             
             
             
