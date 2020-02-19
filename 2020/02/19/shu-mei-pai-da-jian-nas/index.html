@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="树莓派搭建NAS, Charles">
-    <meta name="description" content="树莓派搭建NAS​        疫情期间在家无聊，整理东西的时候发现了一直吃灰的树莓派，就想倒腾一下，搭建一个NAS。主要步骤是将一块移动硬盘挂载在树莓派上，做为文件、电影的存储空间，使用samba共享文件，可以在同个局域网的多个终端上访">
+    <meta name="description" content="树莓派搭建NAS疫情期间在家无聊，整理东西的时候发现了一直吃灰的树莓派，就想倒腾一下，搭建一个NAS。主要步骤是将一块移动硬盘挂载在树莓派上，做为文件、电影的存储空间，使用samba共享文件，可以在同个局域网的多个终端上访问到，如客厅的天猫">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -415,7 +415,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="树莓派搭建NAS"><a href="#树莓派搭建NAS" class="headerlink" title="树莓派搭建NAS"></a>树莓派搭建NAS</h1><p>​        疫情期间在家无聊，整理东西的时候发现了一直吃灰的树莓派，就想倒腾一下，搭建一个NAS。主要步骤是将一块移动硬盘挂载在树莓派上，做为文件、电影的存储空间，使用samba共享文件，可以在同个局域网的多个终端上访问到，如客厅的天猫魔盒，书房的电脑，自己的手机等。如果有公网ip的小伙伴，后期也可以通过frp将aria2的web页面映射到公网上，这要随时随地就看以下载想要的电影，回家后可以直接看下载好的电影。目前aria2支持下载各种https，ftp，BitTorrent等类型的资源。</p>
+                <h1 id="树莓派搭建NAS"><a href="#树莓派搭建NAS" class="headerlink" title="树莓派搭建NAS"></a>树莓派搭建NAS</h1><p>疫情期间在家无聊，整理东西的时候发现了一直吃灰的树莓派，就想倒腾一下，搭建一个NAS。主要步骤是将一块移动硬盘挂载在树莓派上，做为文件、电影的存储空间，使用samba共享文件，可以在同个局域网的多个终端上访问到，如客厅的天猫魔盒，书房的电脑，自己的手机等。如果有公网ip的小伙伴，后期也可以通过frp将aria2的web页面映射到公网上，这要随时随地就看以下载想要的电影，回家后可以直接看下载好的电影。目前aria2支持下载各种https，ftp，BitTorrent等类型的资源。</p>
 <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://image.bingobingo.xin/2020-02-18-125921.png" alt=""></p>
 <p><img src="http://image.bingobingo.xin/2020-02-18-130049.png" alt=""></p>
 <p><img src="http://image.bingobingo.xin/2020-02-18-125645.png" alt=""></p>
@@ -538,7 +538,7 @@ sudo chmod 777 /home/pi/share #赋予权限</code></pre>
 <p>打开访达输入快捷键Command+K，即可访问</p>
 <p><img src="http://image.bingobingo.xin/2020-02-18-132143.png" alt=""> </p>
 <p>同个局域网win10访问共享文件</p>
-<p>win10需要先打开smb服务，在控制面板=&gt;程序和功能=&gt;启用或关闭Windows功能=&gt;勾选SMB1.0/CIFS文件共享支持=&gt;重启=&gt;即可在网络中找到</p>
+<p>win10需要先打开smb服务，在控制面板=&gt;程序和功能=&gt;启用或关闭Windows功能=&gt;勾选SMB1.0/CIFS文件共享支持=&gt;重启=&gt;即可在网络中找到共享文件</p>
 <h2 id="树莓派下载配置nginx和php"><a href="#树莓派下载配置nginx和php" class="headerlink" title="树莓派下载配置nginx和php"></a>树莓派下载配置nginx和php</h2><pre class=" language-shell"><code class="language-shell">sudo apt-get install nginx
 systemctl enable nginx #开机自启动
 sudo apt-get install nginx php7.3-fpm php7.3-cli php7.3-curl php7.3-gd php7.3-mcrypt php7.3-cgi
@@ -672,8 +672,7 @@ sudo mv aira-ng /var/www/html/aria</code></pre>
 <p>即可通过 <code>http://树莓派IP/aria</code> 访问部署好了aira2的web页面</p>
 <p>配置中有如果设置rpc密钥，填入token栏目</p>
 <p><img src="http://image.bingobingo.xin/2020-02-19-065606.png" alt=""></p>
-<p>##h5ai，nginx的配置</p>
-<p>官网地址 <code>https://larsjung.de/h5ai/</code></p>
+<h2 id="树莓派h5ai，nginx的配置"><a href="#树莓派h5ai，nginx的配置" class="headerlink" title="树莓派h5ai，nginx的配置"></a>树莓派h5ai，nginx的配置</h2><p><a href="https://larsjung.de/h5ai/" target="_blank" rel="noopener">官网地址</a></p>
 <pre class=" language-shell"><code class="language-shell">wget https://release.larsjung.de/h5ai/h5ai-0.29.2.zip -O h5ai.zip
 unzip h5ai.zip
 mv _h5ai /var/www/html/h5ai
@@ -774,8 +773,8 @@ server {
 <p>在第一行加入</p>
 <pre class=" language-php"><code class="language-php"><span class="token function">auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="frp内网穿透（选择安装）"><a href="#frp内网穿透（选择安装）" class="headerlink" title="frp内网穿透（选择安装）"></a>frp内网穿透（选择安装）</h2><p>Aria2Ng的web页面映射出来，不单单只是在内网访问，这样可以用过aria2随时随地下载资源</p>
-<p>frp的搭建可以参考另外一篇文章：<a href="http://127.0.0.1:4000/2020/02/14/frp-nei-wang-chuan-tou/" target="_blank" rel="noopener">链接地址</a></p>
-<p>搞定，效果理想，各个终端下观看电影，快进后退都没有出现卡顿的现象</p>
+<p>frp的搭建可以参考另外一篇文章：<a href="https://blog.bingobingo.xin/2020/02/14/frp-nei-wang-chuan-tou/">链接地址</a></p>
+<p>搞定！！！效果不错，各个终端下观看电影，快进后退都没有出现卡顿的现象</p>
 <p>本文aria2部分内容参考来CSDN博主「宁静致远kioye」 <a href="https://blog.csdn.net/kxwinxp/article/details/80288006" target="_blank" rel="noopener">链接地址</a></p>
 
             </div>
@@ -1173,7 +1172,7 @@ server {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            树莓派搭建NAS​        疫情期间在家无聊，整理东西的时候发现了一直吃灰的树莓派，就想倒腾一下，搭建一个NAS。主要步骤是将一块移动硬盘挂载在树莓派上，做为文件、电影的存储空间，使用samba共享文件，可以在同个局域网的多个终端上访
+                            树莓派搭建NAS疫情期间在家无聊，整理东西的时候发现了一直吃灰的树莓派，就想倒腾一下，搭建一个NAS。主要步骤是将一块移动硬盘挂载在树莓派上，做为文件、电影的存储空间，使用samba共享文件，可以在同个局域网的多个终端上访问到，如客厅的天猫
                         
                     </div>
                     <div class="publish-info">
